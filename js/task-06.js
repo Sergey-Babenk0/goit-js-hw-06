@@ -16,7 +16,9 @@ const inputForm = document.querySelector("#validation-input");
 // 2 способ
 inputForm.addEventListener("blur", (enterChar) => {
   inputForm.classList.add("invalid");
-  if (enterChar.currentTarget.value.length == inputForm.dataset.length) {
+  if (
+    enterChar.currentTarget.value.length === Number(inputForm.dataset.length)
+  ) {
     inputForm.classList.replace("invalid", "valid");
     return;
   } else {

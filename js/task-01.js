@@ -10,10 +10,15 @@ console.log(`Number of categories: ${elementsByClass.length}`);
 let textElContent;
 let countEl;
 
-for (const element of elementsByClass) {
-  textElContent = element.firstElementChild.textContent;
-  countEl = element.lastElementChild.children.length;
+// for (const element of elementsByClass) {
+//   textElContent = element.firstElementChild.textContent;
+//   countEl = element.lastElementChild.children.length;
 
-  console.log(`Category: ${textElContent}`);
-  console.log(`Elements: ${countEl}`);
-}
+//   console.log(`Category: ${textElContent}`);
+//   console.log(`Elements: ${countEl}`);
+// }
+
+elementsByClass.forEach(function (value) {
+  console.log(`Category: ${value.firstElementChild.textContent}`);
+  console.log(`Elements: ${value.lastElementChild.children.length}`);
+});
