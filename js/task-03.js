@@ -16,17 +16,21 @@ const images = [
 const listOfPictures = document.querySelector(".gallery");
 console.log(listOfPictures);
 
-const pictures = images.map((image) => {
-  // const elementImg = listOfPictures.insertAdjacentHTML(
-  //   "beforeend",
-  //   `<li class="galery-style"><img src="${image.url}" alt="picture" width = "320px"/></li>`
-  // );
-  const elemImg = document.createElement("img");
-  elemImg.classList.add("galery-style");
-  elemImg.src = image.url;
-  elemImg.alt = image.alt;
-  elemImg.width = 480;
-  return elemImg;
-});
+const pictures = images
+  .map((image) => {
+    // const elementImg = listOfPictures.insertAdjacentHTML(
+    //   "beforeend",
+    //   `<li class="galery-style"><img src="${image.url}" alt="picture" width = "320px"/></li>`
+    // );
+    // const elemImg = document.createElement("img");
+    // elemImg.classList.add("galery-style");
+    // elemImg.src = image.url;
+    // elemImg.alt = image.alt;
+    // elemImg.width = 480;
+    // return elemImg;
 
-listOfPictures.append(...pictures);
+    return `<li class="galery-style"><img src="${image.url}" alt="${image.alt}" width = "480px"/></li>`;
+  })
+  .join("");
+
+listOfPictures.insertAdjacentHTML("beforeend", pictures);
